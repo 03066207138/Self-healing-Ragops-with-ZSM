@@ -1,7 +1,7 @@
 pypdf
-sentence-transformers
-groq
-qdrant-client
+sentence-transformers==2.6.0
+groq==0.5.0
+qdrant-client==1.9.1
 fastapi==0.115.0
 uvicorn==0.30.6
 pandas>=2.2.3rc0
