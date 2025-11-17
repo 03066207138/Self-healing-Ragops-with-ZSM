@@ -10,7 +10,7 @@ if USE_GROQ:
 else:
     from openai import OpenAI
 
-from app.settings import settings
+from .settings import settings
 
 
 def _make_client():
