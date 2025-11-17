@@ -9,7 +9,7 @@ import axios from "axios";
 const API_BASE =
   (typeof import.meta !== "undefined" && import.meta.env?.VITE_API_BASE) ||
   process.env.REACT_APP_API_BASE ||
-  "http://127.0.0.1:8000";
+  "https://self-healing-ragops-with-zsm.onrender.com";
 
 export default function App() {
   // ---------------- State ----------------
