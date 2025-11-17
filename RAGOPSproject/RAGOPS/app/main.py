@@ -9,13 +9,13 @@ import os, pandas as pd, random, csv
 from urllib.parse import unquote
 
 # -------------------- Internal Imports --------------------
-from app.settings import settings
-from app.self_healing_cp.metrics_logger import MetricsLogger
-from app.rag.pipeline import RAGPipeline
-from app.rag.pdf_store import embed_texts   # ✔ FIXED
-from app.self_healing_cp import telemetry, anomaly
-from app.self_healing_cp.orchestrator import HealingAgent
-from app.self_healing_cp.learner import LearningMemory
+from .settings import settings
+from .self_healing_cp.metrics_logger import MetricsLogger
+from .rag.pipeline import RAGPipeline
+from .rag.pdf_store import embed_texts   # ✔ FIXED
+from .self_healing_cp import telemetry, anomaly
+from .self_healing_cp.orchestrator import HealingAgent
+from .self_healing_cp.learner import LearningMemory
 
 # ============================================================
 # 🧠 Initialize FastAPI App
