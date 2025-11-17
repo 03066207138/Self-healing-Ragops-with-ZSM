@@ -7,14 +7,14 @@ from typing import Dict, Any, List, Optional
 from fastapi import APIRouter, UploadFile, File, HTTPException
 from pydantic import BaseModel
 
-from app.self_healing_cp import telemetry, anomaly, orchestrator, policy
-from app.self_healing_cp.metrics_logger import MetricsLogger
-from app.self_healing_cp.learner import LearningMemory  # ⭐ NEW
-from app.settings import settings
+from .self_healing_cp import telemetry, anomaly, orchestrator, policy
+from .self_healing_cp.metrics_logger import MetricsLogger
+from .self_healing_cp.learner import LearningMemory  # ⭐ NEW
+from .settings import settings
 
-from app.rag.generator import generate_answer
-from app.rag.pdf_store import PDF_DIR, list_docs, build_index_for_pdf, search_doc
-from app.rag.pipeline import embed_texts
+from .rag.generator import generate_answer
+from .rag.pdf_store import PDF_DIR, list_docs, build_index_for_pdf, search_doc
+from .rag.pipeline import embed_texts
 
 # --- Optional extras ---
 _HAS_HYBRID = False
