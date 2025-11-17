@@ -8,4 +8,4 @@ faiss-cpu
 groq
 pydantic-settings
 qdrant-client
-torch==2.2.2 --index-url https://download.pytorch.org/whl/cpu
+
