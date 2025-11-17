@@ -4,7 +4,7 @@ import re
 import time
 import numpy as np
 from typing import List, Dict, Tuple, Optional
-# from sentence_transformers import SentenceTransformer
+from sentence_transformers import SentenceTransformer
 
 from .generator import generate_answer
 from .pdf_store import search_doc
@@ -13,7 +13,7 @@ from .pdf_store import search_doc
 # ============================================================
 # 🔢 Shared local embedding model
 # ============================================================
-# _local_model = SentenceTransformer("all-MiniLM-L6-v2")
+_local_model = SentenceTransformer("all-MiniLM-L6-v2")
 
 def embed_texts(texts):
     """Public embedding function for telemetry + metrics."""
