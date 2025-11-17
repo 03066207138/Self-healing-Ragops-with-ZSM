@@ -1,0 +1,370 @@
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000618, "status_after_heal": "healthy", "timestamp": "2025-10-16T18:58:41.815044"}
+{"timestamp": "2025-10-16T18:58:41.816111", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000395, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:11:53.782885"}
+{"timestamp": "2025-10-16T19:11:53.783874", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000526, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:39:43.358856"}
+{"timestamp": "2025-10-16T19:39:43.359756", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00064, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:54:09.506396"}
+{"timestamp": "2025-10-16T19:54:09.507912", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000674, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:54:09.870340"}
+{"timestamp": "2025-10-16T19:54:09.871632", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000402, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:55:57.858042"}
+{"timestamp": "2025-10-16T19:55:57.858893", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000449, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:56:39.961169"}
+{"timestamp": "2025-10-16T19:56:39.961848", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000406, "status_after_heal": "healthy", "timestamp": "2025-10-16T19:57:39.424962"}
+{"timestamp": "2025-10-16T19:57:39.425651", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000831, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:13:45.865412"}
+{"timestamp": "2025-10-16T20:13:45.866800", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["reindex_cb"], "healing_duration_s": 83.270655, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:14:55.683893"}
+{"timestamp": "2025-10-16T20:14:55.685581", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000881, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:24:52.472441"}
+{"timestamp": "2025-10-16T20:24:52.474468", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000921, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:34:14.334812"}
+{"timestamp": "2025-10-16T20:34:14.336549", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000581, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:37:33.979523"}
+{"timestamp": "2025-10-16T20:37:33.980652", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000601, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:52:31.750331"}
+{"timestamp": "2025-10-16T20:52:31.751379", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000818, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:53:56.874088"}
+{"timestamp": "2025-10-16T20:53:56.875673", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001952, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:55:36.631341"}
+{"timestamp": "2025-10-16T20:55:36.632818", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00084, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:56:30.491725"}
+{"timestamp": "2025-10-16T20:56:30.493270", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001151, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:57:40.327727"}
+{"timestamp": "2025-10-16T20:57:40.329944", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000829, "status_after_heal": "healthy", "timestamp": "2025-10-16T20:58:27.103539"}
+{"timestamp": "2025-10-16T20:58:27.104958", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["reindex_cb"], "healing_duration_s": 76.003997, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:00:47.005086"}
+{"timestamp": "2025-10-16T21:00:47.006528", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00088, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:03:13.418043"}
+{"timestamp": "2025-10-16T21:03:13.419694", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000863, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:31:55.531531", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T21:31:55.533665", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000934, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:35:55.351600", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T21:35:55.353482", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000954, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:51:30.777880", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T21:51:30.779735", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000918, "status_after_heal": "healthy", "timestamp": "2025-10-16T21:54:25.776983", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T21:54:25.778896", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000924, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:00:27.374123", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:00:27.376005", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000966, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:04:58.925687", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:04:58.927371", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000928, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:05:11.174081", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:05:11.175712", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000916, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:08:17.822059", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:08:17.824295", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000402, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:12:06.232384", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:12:06.233433", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000445, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:14:43.406291", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:14:43.407258", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000858, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:15:17.582915", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:15:17.583758", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00069, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:29:52.056771", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:29:52.059150", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000732, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:30:28.830687", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:30:28.832511", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000586, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:31:35.219702", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:31:35.221299", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001373, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:40:20.757181", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:40:20.759486", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001518, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:41:31.529129", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:41:31.531457", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000409, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:43:19.967409", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:43:19.968140", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000536, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:44:04.254277", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:44:04.255625", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000451, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:51:51.013609", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:51:51.014641", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000436, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:52:36.228600", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:52:36.229554", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000473, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:53:05.805791", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:53:05.807110", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001263, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:53:17.227422", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:53:17.229160", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000399, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:53:29.460892", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:53:29.461698", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000485, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:53:41.750051", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:53:41.751506", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000392, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:54:06.437126", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:54:06.438038", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000397, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:54:18.604583", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:54:18.605522", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000421, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:54:27.707761", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:54:27.708565", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.0004, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:54:38.460484", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:54:38.461446", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000915, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:54:50.437142", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:54:50.438189", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000455, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:55:02.589246", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:55:02.591155", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000405, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:56:56.480007", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:56:56.480939", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000575, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:57:10.136666", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:57:10.137919", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000375, "status_after_heal": "healthy", "timestamp": "2025-10-16T22:57:22.217462", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T22:57:22.218403", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000836, "status_after_heal": "healthy", "timestamp": "2025-10-16T23:09:19.561860", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T23:09:19.563868", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000507, "status_after_heal": "healthy", "timestamp": "2025-10-16T23:11:27.288833", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T23:11:27.291352", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000374, "status_after_heal": "healthy", "timestamp": "2025-10-16T23:11:58.168684", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-16T23:11:58.170011", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001218, "status_after_heal": "healthy", "timestamp": "2025-10-17T00:31:16.498884", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T00:31:16.501561", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000841, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:46:00.532761", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:46:00.536491", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001267, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:46:32.321562", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:46:32.323976", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000748, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:47:21.175611", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:47:21.177409", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000609, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:48:23.427651", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:48:23.429679", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000814, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:49:18.256014", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:49:18.257858", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000871, "status_after_heal": "healthy", "timestamp": "2025-10-17T23:50:29.282046", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-17T23:50:29.284341", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000944, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:04:17.544464", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:04:17.546227", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00063, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:05:04.308593", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:05:04.311067", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001194, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:05:35.203748", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:05:35.206034", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000937, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:09:52.716260", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:09:52.718231", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00089, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:10:21.097586", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:10:21.099430", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000627, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:16:03.487042", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:16:03.489427", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000776, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:16:15.580369", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:16:15.582098", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000795, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:16:39.821504", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:16:39.823316", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000491, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:39:47.326817", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:39:47.327650", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000528, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:40:22.478854", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:40:22.480171", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000359, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:47:28.616888", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:47:28.617842", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000407, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:47:50.302833", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:47:50.303760", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000559, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:48:12.057616", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:48:12.058672", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000547, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:54:41.720749", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:54:41.722617", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000322, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:55:07.159824", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:55:07.160779", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["reindex_cb"], "healing_duration_s": 55.212795, "status_after_heal": "healthy", "timestamp": "2025-10-18T00:58:09.286470", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T00:58:09.287517", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["reindex_cb"], "healing_duration_s": 60.511445, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:02:23.918459", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:02:23.920050", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000419, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:06:02.301490", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:06:02.302378", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000434, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:06:23.496355", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:06:23.497297", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000394, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:06:52.484799", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:06:52.485583", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["reindex_cb"], "healing_duration_s": 54.907114, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:07:59.213856", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:07:59.215157", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000525, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:10:31.566256", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:10:31.567312", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000313, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:10:36.652432", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:10:36.653139", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000491, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:13:48.740899", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:13:48.741883", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000388, "status_after_heal": "healthy", "timestamp": "2025-10-18T01:14:09.264139", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:14:09.265115", "action": null, "trust_score": 0, "status": "healthy"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000582, "status_after_heal": "failed", "timestamp": "2025-10-18T01:16:38.112232", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:16:38.112808", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000413, "status_after_heal": "failed", "timestamp": "2025-10-18T01:17:18.432488", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:17:18.433152", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000465, "status_after_heal": "failed", "timestamp": "2025-10-18T01:18:02.329094", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:18:02.329807", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000655, "status_after_heal": "failed", "timestamp": "2025-10-18T01:18:33.473482", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:18:33.474449", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000642, "status_after_heal": "failed", "timestamp": "2025-10-18T01:26:11.025548", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:26:11.027896", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000722, "status_after_heal": "failed", "timestamp": "2025-10-18T01:26:22.685806", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:26:22.687062", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000437, "status_after_heal": "failed", "timestamp": "2025-10-18T01:28:11.676239", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:28:11.676936", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000591, "status_after_heal": "failed", "timestamp": "2025-10-18T01:29:16.910949", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:29:16.911766", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000487, "status_after_heal": "failed", "timestamp": "2025-10-18T01:32:02.206216", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:32:02.207102", "action": null, "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000535, "status_after_heal": "failed", "timestamp": "2025-10-18T01:36:06.163556", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:36:06.164342", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000574, "status_after_heal": "failed", "timestamp": "2025-10-18T01:38:31.214436", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:38:31.215414", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000606, "status_after_heal": "failed", "timestamp": "2025-10-18T01:38:39.821071", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:38:39.821908", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000449, "status_after_heal": "failed", "timestamp": "2025-10-18T01:41:56.185905", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:41:56.186533", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000484, "status_after_heal": "failed", "timestamp": "2025-10-18T01:43:55.800994", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:43:55.801690", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.00059, "status_after_heal": "failed", "timestamp": "2025-10-18T01:49:18.617168", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:49:18.618037", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000396, "status_after_heal": "failed", "timestamp": "2025-10-18T01:54:47.322480", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:54:47.323132", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000473, "status_after_heal": "failed", "timestamp": "2025-10-18T01:54:58.150705", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:54:58.151712", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000466, "status_after_heal": "failed", "timestamp": "2025-10-18T01:55:24.186367", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:55:24.187199", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000429, "status_after_heal": "failed", "timestamp": "2025-10-18T01:55:34.280794", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:55:34.281455", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000572, "status_after_heal": "failed", "timestamp": "2025-10-18T01:56:28.851750", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:56:28.853106", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000404, "status_after_heal": "failed", "timestamp": "2025-10-18T01:56:35.971605", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:56:35.972187", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000598, "status_after_heal": "failed", "timestamp": "2025-10-18T01:56:43.491520", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:56:43.492368", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": [], "healing_duration_s": 0.000377, "status_after_heal": "failed", "timestamp": "2025-10-18T01:56:56.668881", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T01:56:56.669472", "action": [], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000628, "status_after_heal": "failed", "timestamp": "2025-10-18T02:01:43.714120", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:01:43.714924", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00039, "status_after_heal": "failed", "timestamp": "2025-10-18T02:01:58.910272", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:01:58.911164", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000466, "status_after_heal": "failed", "timestamp": "2025-10-18T02:02:14.989325", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:02:14.990418", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000665, "status_after_heal": "failed", "timestamp": "2025-10-18T02:02:42.925213", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:02:42.926873", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000327, "status_after_heal": "failed", "timestamp": "2025-10-18T02:06:54.187423", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:06:54.188284", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000298, "status_after_heal": "failed", "timestamp": "2025-10-18T02:07:09.900134", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:07:09.900696", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000305, "status_after_heal": "failed", "timestamp": "2025-10-18T02:07:24.548792", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T02:07:24.549597", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001171, "status_after_heal": "failed", "timestamp": "2025-10-18T09:33:55.637786", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:33:55.640769", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000756, "status_after_heal": "failed", "timestamp": "2025-10-18T09:34:08.136546", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:34:08.137882", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000716, "status_after_heal": "failed", "timestamp": "2025-10-18T09:34:23.055893", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:34:23.057459", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000713, "status_after_heal": "failed", "timestamp": "2025-10-18T09:35:54.699310", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:35:54.701167", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000915, "status_after_heal": "failed", "timestamp": "2025-10-18T09:37:07.426477", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:37:07.428547", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000784, "status_after_heal": "failed", "timestamp": "2025-10-18T09:47:25.976144", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:47:25.978164", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000705, "status_after_heal": "failed", "timestamp": "2025-10-18T09:48:24.285527", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:48:24.287134", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000906, "status_after_heal": "failed", "timestamp": "2025-10-18T09:48:47.330134", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:48:47.331935", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000569, "status_after_heal": "failed", "timestamp": "2025-10-18T09:49:53.250497", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:49:53.252150", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000796, "status_after_heal": "failed", "timestamp": "2025-10-18T09:50:09.098089", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:50:09.099572", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00082, "status_after_heal": "failed", "timestamp": "2025-10-18T09:50:32.696330", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:50:32.698068", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000778, "status_after_heal": "failed", "timestamp": "2025-10-18T09:50:55.642976", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:50:55.645647", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000675, "status_after_heal": "failed", "timestamp": "2025-10-18T09:51:46.131739", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:51:46.133292", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000698, "status_after_heal": "failed", "timestamp": "2025-10-18T09:52:05.665934", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:52:05.667408", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000666, "status_after_heal": "failed", "timestamp": "2025-10-18T09:52:57.250918", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:52:57.253573", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000986, "status_after_heal": "failed", "timestamp": "2025-10-18T09:55:10.956700", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T09:55:10.958770", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.001379, "status_after_heal": "failed", "timestamp": "2025-10-18T19:45:42.445839", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-10-18T19:45:42.458234", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000821, "status_after_heal": "failed", "timestamp": "2025-11-15T21:01:38.562872", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:01:38.564882", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000791, "status_after_heal": "failed", "timestamp": "2025-11-15T21:02:13.557648", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:02:13.559415", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001083, "status_after_heal": "failed", "timestamp": "2025-11-15T21:02:34.257885", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:02:34.259831", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000818, "status_after_heal": "failed", "timestamp": "2025-11-15T21:02:50.587023", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:02:50.589381", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00066, "status_after_heal": "failed", "timestamp": "2025-11-15T21:03:13.218518", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:03:13.220524", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000807, "status_after_heal": "failed", "timestamp": "2025-11-15T21:03:44.299256", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:03:44.300796", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000789, "status_after_heal": "failed", "timestamp": "2025-11-15T21:04:20.079553", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:04:20.081509", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000711, "status_after_heal": "failed", "timestamp": "2025-11-15T21:05:12.219675", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:05:12.221295", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000516, "status_after_heal": "failed", "timestamp": "2025-11-15T21:07:42.599914", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:07:42.601155", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000714, "status_after_heal": "failed", "timestamp": "2025-11-15T21:55:40.791262", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T21:55:40.794148", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000644, "status_after_heal": "failed", "timestamp": "2025-11-15T22:00:38.521669", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:00:38.522926", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000432, "status_after_heal": "failed", "timestamp": "2025-11-15T22:02:14.027044", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:02:14.028431", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "faithfulness_drop", "cause": "LLM hallucination or weak grounding to retrieved context.", "actions": ["tighten_prompt_cb"], "healing_duration_s": 0.000442, "status_after_heal": "failed", "timestamp": "2025-11-15T22:04:12.732476", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:04:12.733618", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000873, "status_after_heal": "failed", "timestamp": "2025-11-15T22:30:13.313294", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:30:13.315787", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000931, "status_after_heal": "failed", "timestamp": "2025-11-15T22:30:26.977201", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:30:26.978754", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000782, "status_after_heal": "failed", "timestamp": "2025-11-15T22:30:53.035508", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:30:53.036848", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001191, "status_after_heal": "failed", "timestamp": "2025-11-15T22:31:07.649345", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:31:07.650896", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000721, "status_after_heal": "failed", "timestamp": "2025-11-15T22:35:17.051422", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:35:17.053141", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000713, "status_after_heal": "failed", "timestamp": "2025-11-15T22:35:31.863718", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:35:31.865499", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.0007, "status_after_heal": "failed", "timestamp": "2025-11-15T22:35:43.045539", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:35:43.047531", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000693, "status_after_heal": "failed", "timestamp": "2025-11-15T22:35:55.446917", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:35:55.448675", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000496, "status_after_heal": "failed", "timestamp": "2025-11-15T22:47:06.848321", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:47:06.849991", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000736, "status_after_heal": "failed", "timestamp": "2025-11-15T22:48:33.898868", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:48:33.900649", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000666, "status_after_heal": "failed", "timestamp": "2025-11-15T22:49:04.903533", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:49:04.905260", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00067, "status_after_heal": "failed", "timestamp": "2025-11-15T22:49:21.172903", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T22:49:21.174663", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000777, "status_after_heal": "failed", "timestamp": "2025-11-15T23:01:10.668191", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T23:01:10.669658", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "coverage_drop", "cause": "Retriever index drift, missing embeddings, or outdated corpus data.", "actions": ["increase_k_cb"], "healing_duration_s": 0.000761, "status_after_heal": "failed", "timestamp": "2025-11-15T23:06:32.108202", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T23:06:32.110136", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001034, "status_after_heal": "failed", "timestamp": "2025-11-15T23:49:12.221116", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-15T23:49:12.222915", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001342, "status_after_heal": "failed", "timestamp": "2025-11-16T00:03:52.750740", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:03:52.752978", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001215, "status_after_heal": "failed", "timestamp": "2025-11-16T00:04:07.432097", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:04:07.434413", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001089, "status_after_heal": "failed", "timestamp": "2025-11-16T00:13:18.633631", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:13:18.635583", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001082, "status_after_heal": "failed", "timestamp": "2025-11-16T00:13:57.152311", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:13:57.154257", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001119, "status_after_heal": "failed", "timestamp": "2025-11-16T00:22:34.744947", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:22:34.747246", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.001075, "status_after_heal": "failed", "timestamp": "2025-11-16T00:29:47.718673", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:29:47.720263", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "healing_duration_s": 0.00079, "status_after_heal": "failed", "timestamp": "2025-11-16T00:30:47.924747", "recovery_efficiency": 0.0, "reward": -0.2}
+{"timestamp": "2025-11-16T00:30:47.926088", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.00091, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:12:10.776487"}
+{"timestamp": "2025-11-16T01:12:10.776487", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "latency_spike", "cause": "Model overload or slow external API.", "actions": ["increase_k_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000664, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:12:38.377340"}
+{"timestamp": "2025-11-16T01:12:38.377340", "action": ["increase_k_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "retrieval_drift", "cause": "Semantic mismatch between retrieval & query.", "actions": ["switch_retriever_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000399, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:36:20.551632"}
+{"timestamp": "2025-11-16T01:36:20.551632", "action": ["switch_retriever_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000406, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:36:29.895544"}
+{"timestamp": "2025-11-16T01:36:29.895544", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000436, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:43:02.151413"}
+{"timestamp": "2025-11-16T01:43:02.151413", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000321, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:43:11.081113"}
+{"timestamp": "2025-11-16T01:43:11.081113", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000294, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:43:32.749973"}
+{"timestamp": "2025-11-16T01:43:32.749973", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000333, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:43:40.510129"}
+{"timestamp": "2025-11-16T01:43:40.510129", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.00032, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:43:46.449073"}
+{"timestamp": "2025-11-16T01:43:46.449073", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000297, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:44:08.183869"}
+{"timestamp": "2025-11-16T01:44:08.183869", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000342, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:44:15.446660"}
+{"timestamp": "2025-11-16T01:44:15.446660", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000361, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:44:21.127621"}
+{"timestamp": "2025-11-16T01:44:21.127621", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "hallucination_spike", "cause": "LLM deviated from retrieved knowledge.", "actions": ["tighten_prompt_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000334, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:44:27.270711"}
+{"timestamp": "2025-11-16T01:44:27.270711", "action": ["tighten_prompt_cb"], "trust_score": 0, "status": "failed"}
+{"anomaly": "retrieval_drift", "cause": "Semantic mismatch between retrieval & query.", "actions": ["switch_retriever_cb"], "recovery_efficiency": 0.0, "healing_duration_s": 0.000346, "status_after_heal": "failed", "reward": -0.2, "timestamp": "2025-11-16T01:44:33.064958"}
+{"timestamp": "2025-11-16T01:44:33.064958", "action": ["switch_retriever_cb"], "trust_score": 0, "status": "failed"}
