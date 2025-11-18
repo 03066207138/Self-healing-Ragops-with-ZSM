@@ -3,7 +3,8 @@ import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
 /**
- * Agentic Self-Healing RAGOps + Qdrant Indexing (COMPLETE FRONTEND)
+ * Agentic Self-Healing RAGOps + Qdrant Indexing (FIXED VERSION)
+ * All “undefined metric” crashes are fixed with safe-access and defaults.
  */
 
 const API_BASE =
@@ -15,7 +16,7 @@ export default function App() {
   // ---------------- State ----------------
   const [query, setQuery] = useState("");
   const [answer, setAnswer] = useState("");
-  const [metrics, setMetrics] = useState(null);
+  const [metrics, setMetrics] = useState({});
   const [history, setHistory] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -66,17 +67,13 @@ export default function App() {
       const form = new FormData();
       form.append("file", file);
 
-      // 1. Upload PDF
       await axios.post(`${API_BASE}/upload`, form);
-
-      // 2. Index PDF → stores vectors in Qdrant
       await axios.post(
         `${API_BASE}/index_pdf/${encodeURIComponent(file.name)}`
       );
 
       fetchUploads();
       setFile(null);
-
       alert("📚 PDF Uploaded + Indexed in Qdrant!");
     } catch (e) {
       console.error(e);
@@ -93,7 +90,9 @@ export default function App() {
     }
   }
 
-  // ------------ MAIN QUERY ------------
+  // ============================================================
+  // 📌 MAIN QUERY
+  // ============================================================
   async function submit() {
     if (!query.trim()) return;
 
@@ -103,42 +102,54 @@ export default function App() {
 
     try {
       const res = await axios.post(`${API_BASE}/query`, { query });
-      const M = res.data.metrics;
 
-      setAnswer(res.data.answer);
+      const M = res.data?.metrics || {}; // SAFE
+
+      setAnswer(res.data?.answer || "");
       setMetrics(M);
-      updateHistory(M);
-    } catch {
+
+      if (Object.keys(M).length > 0) {
+        updateHistory(M);
+      }
+    } catch (e) {
+      console.error(e);
       setError("⚠ Backend unreachable or Qdrant empty");
     } finally {
       setLoading(false);
     }
   }
 
-  // ------------ TIMELINE UPDATE ------------
+  // ============================================================
+  // 📌 TIMELINE UPDATE (SAFE ACCESS)
+  // ============================================================
   function updateHistory(m) {
     setHistory((prev) => [
       ...prev,
       {
         idx: (prev[prev.length - 1]?.idx ?? 0) + 1,
-        latency_ms: m.latency_ms,
-        coverage_at_k: m.coverage_at_k,
-        faithfulness: m.faithfulness,
-        semantic_drift: m.semantic_drift,
-        hallucination_rate: m.hallucination_rate,
-        anomaly_type: m.anomaly_type || "—",
-        healing_action: m.healing_action,
-        reward: m.reward,
-        status_after_heal: m.status_after_heal,
+
+        latency_ms: m?.latency_ms ?? 0,
+        coverage_at_k: m?.coverage_at_k ?? 0,
+        faithfulness: m?.faithfulness ?? 0,
+        semantic_drift: m?.semantic_drift ?? 0,
+        hallucination_rate: m?.hallucination_rate ?? 0,
+
+        anomaly_type: m?.anomaly_type ?? "—",
+        healing_action: m?.healing_action ?? "—",
+
+        reward: m?.reward ?? 0,
+        status_after_heal: m?.status_after_heal ?? "unknown",
       },
     ]);
   }
 
-  // ------------ FEEDBACK ------------
+  // ============================================================
+  // 📌 FEEDBACK
+  // ============================================================
   async function sendFeedback(isCorrect, corrected = null) {
     try {
       await axios.post(`${API_BASE}/feedback`, {
-        request_id: metrics?.request_id,
+        request_id: metrics?.request_id || "",
         is_correct: isCorrect,
         correct_answer: corrected,
       });
@@ -157,15 +168,18 @@ export default function App() {
     }
   }
 
-  // ------------ KPIs ------------
+  // ============================================================
+  // 📌 KPIs (SAFE)
+  // ============================================================
   const kpis = useMemo(() => {
     if (!metrics) return [];
+
     return [
-      { label: "Governance Score", value: metrics.governance_score?.toFixed(2) },
-      { label: "Faithfulness", value: metrics.faithfulness?.toFixed(2) },
-      { label: "Coverage@K", value: metrics.coverage_at_k?.toFixed(2) },
-      { label: "Semantic Drift", value: metrics.semantic_drift?.toFixed(2) },
-      { label: "Latency (ms)", value: metrics.latency_ms?.toFixed(1) },
+      { label: "Governance Score", value: metrics?.governance_score?.toFixed?.(2) ?? "--" },
+      { label: "Faithfulness", value: metrics?.faithfulness?.toFixed?.(2) ?? "--" },
+      { label: "Coverage@K", value: metrics?.coverage_at_k?.toFixed?.(2) ?? "--" },
+      { label: "Semantic Drift", value: metrics?.semantic_drift?.toFixed?.(2) ?? "--" },
+      { label: "Latency (ms)", value: metrics?.latency_ms?.toFixed?.(1) ?? "--" },
     ];
   }, [metrics]);
 
@@ -252,7 +266,7 @@ export default function App() {
             {kpis.map((k) => (
               <div key={k.label} className="kpi glassy">
                 <div className="kpi-label">{k.label}</div>
-                <div className="kpi-value">{k.value ?? "--"}</div>
+                <div className="kpi-value">{k.value}</div>
               </div>
             ))}
           </div>
@@ -282,7 +296,7 @@ export default function App() {
                 onClick={() => {
                   setQuery("");
                   setAnswer("");
-                  setMetrics(null);
+                  setMetrics({});
                 }}
               >
                 Clear
@@ -400,14 +414,14 @@ export default function App() {
                 {history.map((h, i) => (
                   <tr key={i}>
                     <td>{h.idx}</td>
-                    <td>{h.latency_ms?.toFixed(1)}</td>
-                    <td>{h.coverage_at_k?.toFixed(2)}</td>
-                    <td>{h.faithfulness?.toFixed(2)}</td>
-                    <td>{h.semantic_drift?.toFixed(2)}</td>
-                    <td>{h.hallucination_rate?.toFixed(2)}</td>
-                    <td>{h.anomaly_type || "—"}</td>
-                    <td>{h.healing_action || "—"}</td>
-                    <td>{h.reward?.toFixed(2)}</td>
+                    <td>{h.latency_ms?.toFixed?.(1) ?? "--"}</td>
+                    <td>{h.coverage_at_k?.toFixed?.(2) ?? "--"}</td>
+                    <td>{h.faithfulness?.toFixed?.(2) ?? "--"}</td>
+                    <td>{h.semantic_drift?.toFixed?.(2) ?? "--"}</td>
+                    <td>{h.hallucination_rate?.toFixed?.(2) ?? "--"}</td>
+                    <td>{h.anomaly_type}</td>
+                    <td>{h.healing_action}</td>
+                    <td>{h.reward?.toFixed?.(2) ?? "--"}</td>
                     <td>{h.status_after_heal}</td>
                   </tr>
                 ))}
@@ -432,7 +446,6 @@ export default function App() {
     </div>
   );
 }
-
 
 
 /* ---------------- Styles ---------------- */
