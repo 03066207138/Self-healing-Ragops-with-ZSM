@@ -52,7 +52,7 @@ except:
 
 
 # -----------------------------------
-# BUILD INDEX FOR PDF
+# BUILD INDEX FOR PDF (FIXED)
 # -----------------------------------
 def build_index_for_pdf(doc_id: str, pdf_path: str):
     reader = PdfReader(pdf_path)
@@ -68,9 +68,12 @@ def build_index_for_pdf(doc_id: str, pdf_path: str):
 
     points = []
     for idx, (txt, vec) in enumerate(zip(chunks, embeddings)):
+        # ✔ FIX 1: generate valid UUID ID
+        point_id = str(uuid.uuid4())
+
         points.append(
             PointStruct(
-                id=f"{doc_id}_{idx}",
+                id=point_id,            # ← UUID instead of string
                 vector=vec,
                 payload={
                     "text": txt,
@@ -80,7 +83,11 @@ def build_index_for_pdf(doc_id: str, pdf_path: str):
             )
         )
 
-    qdrant.upsert(collection_name="rag_chunks", points=points)
+    # ✔ FIX 2: Upsert safely
+    qdrant.upsert(
+        collection_name="rag_chunks",
+        points=points
+    )
 
     return {"chunks": len(points)}
 
