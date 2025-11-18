@@ -3,9 +3,10 @@
 import os
 import uuid
 from typing import List, Dict
+from pathlib import Path
+
 from pypdf import PdfReader
 import numpy as np
-
 from sentence_transformers import SentenceTransformer
 
 # Qdrant Embedded Mode
@@ -17,7 +18,7 @@ from qdrant_client.models import (
 )
 
 # ============================================================
-# 🔤 EMBEDDING MODEL (MiniLM)
+# 🧠 EMBEDDING MODEL
 # ============================================================
 MODEL_NAME = "all-MiniLM-L6-v2"
 _model = SentenceTransformer(MODEL_NAME)
@@ -25,9 +26,7 @@ EMB_DIM = _model.get_sentence_embedding_dimension()
 
 
 def embed(texts):
-    """
-    Convert texts to normalized embeddings.
-    """
+    """Return L2-normalized embeddings as float32."""
     if isinstance(texts, str):
         texts = [texts]
 
@@ -37,52 +36,61 @@ def embed(texts):
 
 
 # ============================================================
-# 🗄️ PERSISTENT QDRANT STORAGE (REQUIRED FOR RENDER)
+# 📂 QDRANT EMBEDDED CLIENT (NO /var, ONLY LOCAL FOLDER)
 # ============================================================
-# Render persistent disk MUST be mounted to /var/data/qdrant
-QDRANT_PATH = "/var/data/qdrant"
-os.makedirs(QDRANT_PATH, exist_ok=True)
+# IMPORTANT: this path must be writable on Render → use relative folder.
+# It will live under /opt/render/project/src/qdrant_storage
+QDRANT_PATH = os.getenv("QDRANT_PATH", "qdrant_storage")
+
+# Make sure folder exists (relative, no /var)
+Path(QDRANT_PATH).mkdir(parents=True, exist_ok=True)
 
 qdrant = QdrantClient(path=QDRANT_PATH)
 
-# Create collection if not exists
-if "rag_chunks" not in [c.name for c in qdrant.get_collections().collections]:
+# Create collection if missing
+try:
+    qdrant.get_collection("rag_chunks")
+except Exception:
     qdrant.create_collection(
         collection_name="rag_chunks",
         vectors_config=VectorParams(
             size=EMB_DIM,
             distance=Distance.COSINE,
-        )
+        ),
     )
 
 
 # ============================================================
-# 📄 BUILD INDEX FOR PDF → Qdrant
+# 📄 BUILD INDEX FOR PDF
 # ============================================================
 def build_index_for_pdf(doc_id: str, pdf_path: str) -> Dict[str, int]:
     """
-    Extract text per page → embed → store in Qdrant.
+    Read a PDF, chunk by page, embed with MiniLM, and upsert into Qdrant.
+    doc_id: logical document identifier (e.g., filename without extension)
+    pdf_path: filesystem path to the uploaded PDF
     """
     reader = PdfReader(pdf_path)
+    chunks: List[str] = []
 
-    chunks = []
     for p in reader.pages:
         text = p.extract_text() or ""
         text = text.strip()
         if text:
             chunks.append(text)
 
-    # If no extractable text
     if not chunks:
         return {"chunks": 0}
 
     embeddings = embed(chunks)
 
-    points = []
+    points: List[PointStruct] = []
     for idx, (txt, vec) in enumerate(zip(chunks, embeddings)):
+        # Use a proper UUID so Qdrant never complains
+        point_id = str(uuid.uuid4())
+
         points.append(
             PointStruct(
-                id=str(uuid.uuid4()),  # Safe unique ID
+                id=point_id,
                 vector=vec,
                 payload={
                     "text": txt,
@@ -92,7 +100,6 @@ def build_index_for_pdf(doc_id: str, pdf_path: str) -> Dict[str, int]:
             )
         )
 
-    # Save in Qdrant
     qdrant.upsert(
         collection_name="rag_chunks",
         points=points,
@@ -102,27 +109,37 @@ def build_index_for_pdf(doc_id: str, pdf_path: str) -> Dict[str, int]:
 
 
 # ============================================================
-# 🔎 SEARCH RETRIEVAL
+# 🔍 SEARCH INQDRANT
 # ============================================================
-def search_doc(doc_id: str, query: str, k=5) -> List[Dict]:
+def search_doc(doc_id: str, query: str, k: int = 5) -> List[Dict]:
+    """
+    Search relevant chunks for the query.
+    Currently we ignore doc_id filter (global search).
+    You can add a filter on doc_id later if you want per-document search.
+    """
     qvec = embed(query)[0]
 
     hits = qdrant.search(
         collection_name="rag_chunks",
         query_vector=qvec,
         limit=k,
+        # To filter by doc_id, uncomment this:
+        # query_filter=models.Filter(
+        #     must=[models.FieldCondition(key="doc_id", match=models.MatchValue(value=doc_id))]
+        # )
     )
 
-    results = []
+    out: List[Dict] = []
     for h in hits:
-        payload = h.payload or {}
+        p = h.payload or {}
+        out.append(
+            {
+                "id": h.id,
+                "score": float(h.score),
+                "text": p.get("text", ""),
+                "doc_id": p.get("doc_id"),
+                "chunk_id": p.get("chunk_id"),
+            }
+        )
 
-        results.append({
-            "id": h.id,
-            "score": float(h.score),
-            "text": payload.get("text", ""),
-            "doc_id": payload.get("doc_id", ""),
-            "chunk_id": payload.get("chunk_id", 0),
-        })
-
-    return results
+    return out
