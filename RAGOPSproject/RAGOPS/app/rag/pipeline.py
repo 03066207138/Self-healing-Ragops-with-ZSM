@@ -39,30 +39,31 @@ def clean_text(text: str) -> str:
 
 
 # ============================================================
-# 🧠 Qdrant Powered RAG Pipeline
+# 🧠 Qdrant Powered RAG Pipeline (FIXED)
 # ============================================================
 class RAGPipeline:
 
     def __init__(self, k: int = 5):
         self.k = k
-        self.max_ctx = 3
+        self.max_ctx = 10   # FIX: more context improves accuracy
 
     # --------------------------------------------------------
-    # 🔍 RUN QUERY
+    # 🔍 RUN QUERY (FIXED)
     # --------------------------------------------------------
-    def run(self, query: str, doc_id: Optional[str] = None):
+    def run(self, query: str):
         t0 = time.time()
 
         # 1) Retrieve from Qdrant
         try:
-            results = search_doc(doc_id=doc_id, query=query, k=self.k)
+            # doc_id ignored → search all documents
+            results = search_doc(doc_id=None, query=query, k=self.k)
         except Exception as e:
             print("[RAGPipeline] Retrieval error:", e)
             return "⚠️ Retrieval failed", [], 0, 0, (time.time() - t0) * 1000
 
         if not results:
             return (
-                "⚠️ No relevant passages found. Please index PDFs first or check Qdrant.",
+                "⚠️ No relevant passages found. Please index PDFs first.",
                 [],
                 0, 0,
                 (time.time() - t0) * 1000
@@ -72,6 +73,8 @@ class RAGPipeline:
         passages = []
         for p in results:
             text = clean_text(p.get("text", ""))
+            if not text:
+                continue
 
             passages.append({
                 "id": p.get("id"),
@@ -82,13 +85,26 @@ class RAGPipeline:
                 "score": float(p.get("score", 0.0)),
             })
 
+        if not passages:
+            return (
+                "⚠️ Extracted passages were empty.",
+                [],
+                0,0,
+                (time.time() - t0) * 1000
+            )
+
         ctx = passages[:self.max_ctx]
 
         # 3) Generate LLM answer
         answer, tin, tout = generate_answer(query, ctx)
 
+        # Safety: never return blank answer
+        if not answer.strip():
+            answer = "⚠ No answer generated. Try uploading more PDFs."
+
         latency = (time.time() - t0) * 1000
         return answer, passages, tin, tout, latency
+
 
     # --------------------------------------------------------
     # 📄 INDEX PDF – DELEGATE TO pdf_store
@@ -97,6 +113,7 @@ class RAGPipeline:
         from .pdf_store import build_index_for_pdf
         info = build_index_for_pdf(doc_id, pdf_path)
         return [{"id": f"{doc_id}_{i}"} for i in range(info["chunks"])]
+
 
     # --------------------------------------------------------
     # 🩺 Healing
