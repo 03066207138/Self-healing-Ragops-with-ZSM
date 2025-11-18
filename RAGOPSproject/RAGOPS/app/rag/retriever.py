@@ -5,7 +5,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer
 
 # -------------------------------
-# 🚀 QDRANT
+# 🚀 QDRANT (Embedded Mode)
 # -------------------------------
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
@@ -31,12 +31,13 @@ def _ensure(path: str):
 
 class VectorRetriever:
     """
-    UPDATED: QDRANT-POWERED RETRIEVER
-    ---------------------------------
-    - Stores all chunks in Qdrant
+    UPDATED: Embedded QDRANT-POWERED RETRIEVER
+    ------------------------------------------
+    - Uses Qdrant in embedded mode (no server needed)
+    - Works on Render, Railway, HuggingFace
+    - Stores all chunks in embedded vector DB
     - Metadata-rich memory
     - Cosine search
-    - Fully drop-in compatible replacement for FAISS version
     """
 
     def __init__(
@@ -52,18 +53,22 @@ class VectorRetriever:
         self.model = SentenceTransformer(MODEL_NAME)
         self.dim = self.model.get_sentence_embedding_dimension()
 
-        # Initialize Qdrant
-        self.qdrant = QdrantClient(url="http://localhost:6333", timeout=1)
-
+        # --------------------------------------------
+        # ⭐ Embedded Qdrant — no external server needed
+        # --------------------------------------------
+        self.qdrant = QdrantClient(path="qdrant_storage")
 
         # Create collection if missing
-        self.qdrant.recreate_collection(
-            collection_name=self.collection,
-            vectors_config=VectorParams(
-                size=self.dim,
-                distance=Distance.COSINE
+        try:
+            self.qdrant.get_collection(self.collection)
+        except:
+            self.qdrant.create_collection(
+                collection_name=self.collection,
+                vectors_config=VectorParams(
+                    size=self.dim,
+                    distance=Distance.COSINE
+                )
             )
-        )
 
         # load metadata from JSON
         self.texts = []
@@ -81,7 +86,7 @@ class VectorRetriever:
         return embs
 
     # ----------------------------------------
-    # LOAD CORPUS.JSON (metadata only)
+    # LOAD corpus.json METADATA
     # ----------------------------------------
     def _load_corpus(self):
         if not os.path.exists(self.corpus_path):
@@ -114,7 +119,7 @@ class VectorRetriever:
         for i, (text, vec) in enumerate(zip(chunks, embs)):
             point_id = f"{doc_id}_{len(self.texts) + i}"
 
-            # store metadata
+            # metadata
             meta_item = {
                 "text": text,
                 "doc_id": doc_id,
@@ -130,14 +135,13 @@ class VectorRetriever:
                 )
             )
 
-            # append to local metadata list
             self.texts.append(text)
             self.meta.append(meta_item)
 
-        # Upsert into Qdrant
+        # upsert to Qdrant embedded DB
         self.qdrant.upsert(collection_name=self.collection, points=points)
 
-        # Save metadata to corpus.json
+        # Save metadata
         with open(self.corpus_path, "w", encoding="utf-8") as f:
             json.dump(
                 [{"text": t, **m} for t, m in zip(self.texts, self.meta)],
@@ -146,7 +150,7 @@ class VectorRetriever:
             )
 
     # ----------------------------------------
-    # SEARCH
+    # SEARCH VECTOR STORE
     # ----------------------------------------
     def search(self, query: str, k=5, restrict_to=None) -> List[Dict]:
         if len(self.texts) == 0:
@@ -154,7 +158,7 @@ class VectorRetriever:
 
         q_vec = self._embed(query)[0]
 
-        # Optional doc filter
+        # Optional doc-level filter
         q_filter = None
         if restrict_to:
             q_filter = Filter(
