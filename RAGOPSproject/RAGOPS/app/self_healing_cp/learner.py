@@ -5,35 +5,30 @@ import os
 import time
 from typing import Dict, Any, List, Optional
 
-# ---------------------------------------
-# 🚀 NEW: Qdrant + Embedding dependencies
-# ---------------------------------------
+# Qdrant Embedded
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     VectorParams,
     Distance,
     PointStruct
 )
+
 from sentence_transformers import SentenceTransformer
 import numpy as np
 
 
 class LearningMemory:
     """
-    Self-Healing Memory Layer
-    -------------------------
-    - Keeps original JSON storage (verified + failures)
-    - Adds Qdrant Vector Memory for semantic recall
-    - Stores embeddings of:
-        • failures
-        • corrections
-        • verified Q/A
+    Self-Healing Memory for RAGOPS
+    Uses:
+        • JSON store (verified + failures)
+        • Qdrant Embedded Vector Memory
     """
 
     def __init__(self, file_path: Optional[str] = None, path: Optional[str] = None):
-        # -------------------------------
-        # JSON File Setup
-        # -------------------------------
+        # ---------------------------------------
+        # JSON Memory File
+        # ---------------------------------------
         self.path = file_path or path or "app/data/learning_memory.json"
         os.makedirs(os.path.dirname(self.path), exist_ok=True)
 
@@ -41,69 +36,80 @@ class LearningMemory:
             with open(self.path, "w", encoding="utf-8") as f:
                 json.dump({"verified": [], "failures": []}, f, indent=2)
 
-        # -------------------------------
-        # 🚀 Qdrant Setup
-        # -------------------------------
+        # ---------------------------------------
+        # Embedding Model
+        # ---------------------------------------
         self.embedder = SentenceTransformer("all-MiniLM-L6-v2")
         self.dim = self.embedder.get_sentence_embedding_dimension()
 
-        self.qdrant = QdrantClient(host="localhost", port=6333)
+        # ---------------------------------------
+        # 🚀 Embedded Qdrant Storage
+        # ---------------------------------------
+        # Stored locally inside container
+        self.qdrant = QdrantClient(path="qdrant_learning")
 
-        # Create collection if not exists
-        self.qdrant.recreate_collection(
-            collection_name="healing_memory",
-            vectors_config=VectorParams(
-                size=self.dim,
-                distance=Distance.COSINE
+        # Create collection safely
+        try:
+            self.qdrant.get_collection("healing_memory")
+        except:
+            self.qdrant.create_collection(
+                collection_name="healing_memory",
+                vectors_config=VectorParams(
+                    size=self.dim,
+                    distance=Distance.COSINE
+                )
             )
-        )
 
-    # ------------------------------------------------------
-    # Internal JSON utilities
-    # ------------------------------------------------------
+    # ---------------------------------------
+    # JSON Helpers
+    # ---------------------------------------
     def _load(self) -> Dict[str, Any]:
         with open(self.path, "r", encoding="utf-8") as f:
             return json.load(f)
 
-    def _save(self, data: Dict[str, Any]) -> None:
+    def _save(self, data: Dict[str, Any]):
         with open(self.path, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2)
 
-    # ------------------------------------------------------
-    # 🚀 NEW: Add to Qdrant Memory
-    # ------------------------------------------------------
+    # ---------------------------------------
+    # Embedding Helper
+    # ---------------------------------------
     def _embed(self, text: str) -> np.ndarray:
         vec = self.embedder.encode([text], convert_to_numpy=True)[0]
         vec = vec / (np.linalg.norm(vec) + 1e-8)
         return vec.astype("float32")
 
+    # ---------------------------------------
+    # Store vector in Qdrant
+    # ---------------------------------------
     def _store_qdrant(self, text: str, metadata: dict):
         vector = self._embed(text)
+
         point = PointStruct(
             id=str(time.time_ns()),
             vector=vector,
             payload=metadata
         )
+
         self.qdrant.upsert(
             collection_name="healing_memory",
             points=[point]
         )
 
-    # ------------------------------------------------------
-    # Add Verified Q/A (correct answers)
-    # ------------------------------------------------------
-    def add_verified_qa(self, query: str, answer: str) -> None:
+    # ---------------------------------------
+    # Add Verified QA
+    # ---------------------------------------
+    def add_verified_qa(self, query: str, answer: str):
         data = self._load()
         entry = {"query": query, "answer": answer}
 
         if entry not in data["verified"]:
             data["verified"].append(entry)
+            self._save(data)
 
-        self._save(data)
-
-        # 🚀 Store in Qdrant
+        # Store vector memory
         self._store_qdrant(
-            text=query + " " + answer,
+            text=f"{query} {answer}",
             metadata={
                 "type": "verified",
                 "query": query,
@@ -112,22 +118,23 @@ class LearningMemory:
             }
         )
 
-    # ------------------------------------------------------
-    # Add Failure (wrong answer)
-    # ------------------------------------------------------
-    def add_failure(self, query: str, wrong_answer: str, reason: str = "") -> None:
+    # ---------------------------------------
+    # Add Failure
+    # ---------------------------------------
+    def add_failure(self, query: str, wrong_answer: str, reason: str = ""):
         data = self._load()
         entry = {
             "query": query,
             "wrong_answer": wrong_answer,
             "reason": reason,
         }
+
         data["failures"].append(entry)
         self._save(data)
 
-        # 🚀 Store failure in Qdrant vector memory
+        # Store vector
         self._store_qdrant(
-            text=query + " " + wrong_answer + " " + reason,
+            text=f"{query} {wrong_answer} {reason}",
             metadata={
                 "type": "failure",
                 "query": query,
@@ -137,36 +144,22 @@ class LearningMemory:
             }
         )
 
-    # ------------------------------------------------------
-    # Helper: return all verified QA
-    # ------------------------------------------------------
-    def get_verified(self) -> List[Dict[str, str]]:
-        data = self._load()
-        return data.get("verified", [])
-
-    # ------------------------------------------------------
-    # Helper: return all failures
-    # ------------------------------------------------------
-    def get_failures(self) -> List[Dict[str, Any]]:
-        data = self._load()
-        return data.get("failures", [])
-
-    # ------------------------------------------------------
-    # 🚀 NEW: Search Healing Memory (semantic search)
-    # ------------------------------------------------------
-    def search_healing_memory(self, query: str, k: int = 3) -> List[Dict]:
+    # ---------------------------------------
+    # Search Healing Memory
+    # ---------------------------------------
+    def search_healing_memory(self, query: str, k: int = 3):
         vector = self._embed(query)
 
-        results = self.qdrant.search(
+        hits = self.qdrant.search(
             collection_name="healing_memory",
             query_vector=vector,
             limit=k
         )
 
-        output = []
-        for hit in results:
-            payload = hit.payload
-            payload["score"] = float(hit.score)
-            output.append(payload)
+        results = []
+        for h in hits:
+            payload = h.payload
+            payload["score"] = float(h.score)
+            results.append(payload)
 
-        return output
+        return results
