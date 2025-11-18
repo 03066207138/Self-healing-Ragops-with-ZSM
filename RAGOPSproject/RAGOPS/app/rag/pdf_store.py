@@ -3,165 +3,109 @@
 import os
 import json
 import uuid
-from typing import List, Dict, Optional
+from typing import List, Dict
 from pypdf import PdfReader
-
 import numpy as np
+
 from sentence_transformers import SentenceTransformer
 
+# Qdrant Embedded Mode
 from qdrant_client import QdrantClient
 from qdrant_client.models import (
     VectorParams,
     Distance,
     PointStruct,
-    Filter,
-    FieldCondition,
-    MatchValue,
 )
 
-DATA_DIR = "app/data"
-PDF_DIR = os.path.join(DATA_DIR, "pdfs")
-META_PATH = os.path.join(DATA_DIR, "qdrant_meta.json")
-os.makedirs(PDF_DIR, exist_ok=True)
-
-# ---------------------
-# Embedding Model
-# ---------------------
-# -------------------------
-# Load local model
-# -------------------------
-_model = SentenceTransformer("all-MiniLM-L6-v2")
-EMB_DIM = 384
+# -----------------------------------
+# EMBEDDING MODEL
+# -----------------------------------
+MODEL_NAME = "all-MiniLM-L6-v2"
+_model = SentenceTransformer(MODEL_NAME)
+EMB_DIM = _model.get_sentence_embedding_dimension()
 
 
-def embed(texts: List[str]):
-    arr = np.array(_model.encode(texts, convert_to_numpy=True))
-    arr = arr / (np.linalg.norm(arr, axis=1, keepdims=True) + 1e-8)
-    return arr.astype("float32")
+def embed(texts):
+    if isinstance(texts, str):
+        texts = [texts]
+    vecs = _model.encode(texts, convert_to_numpy=True)
+    vecs = vecs / (np.linalg.norm(vecs, axis=1, keepdims=True) + 1e-8)
+    return vecs.astype("float32")
 
 
-# ---------------------
-# Qdrant Setup
-# ---------------------
+# -----------------------------------
+# EMBEDDED QDRANT CLIENT
+# -----------------------------------
+qdrant = QdrantClient(path="qdrant_storage")
+
+# Create collection if missing
 try:
     qdrant.get_collection("rag_chunks")
 except:
     qdrant.create_collection(
         collection_name="rag_chunks",
-        vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+        vectors_config=VectorParams(
+            size=EMB_DIM,
+            distance=Distance.COSINE
+        )
     )
 
 
-# ---------------------
-# Metadata IO
-# ---------------------
-def _load_meta():
-    if os.path.exists(META_PATH):
-        with open(META_PATH, "r") as f:
-            return json.load(f)
-    return {}
-
-
-def _save_meta(meta):
-    with open(META_PATH, "w") as f:
-        json.dump(meta, f, indent=2)
-
-
-# ---------------------
-# Text chunking
-# ---------------------
-def chunk_text(text: str, chunk_size=800, overlap=120) -> List[str]:
-    text = text.replace("\n", " ")
-    chunks = []
-    i = 0
-    while i < len(text):
-        chunks.append(text[i:i + chunk_size])
-        i += chunk_size - overlap
-    return chunks
-
-
-# ---------------------
-# Index PDF → Qdrant
-# ---------------------
-def build_index_for_pdf(doc_id: str, pdf_path: str) -> Dict:
+# -----------------------------------
+# BUILD INDEX FOR PDF
+# -----------------------------------
+def build_index_for_pdf(doc_id: str, pdf_path: str):
     reader = PdfReader(pdf_path)
+    chunks = []
 
-    pages = []
     for p in reader.pages:
-        try:
-            pages.append(p.extract_text() or "")
-        except:
-            pages.append("")
+        text = p.extract_text() or ""
+        text = text.strip()
+        if text:
+            chunks.append(text)
 
-    raw = " ".join(pages).strip()
-    if not raw:
-        raise ValueError("No extractable text in PDF.")
-
-    chunks = chunk_text(raw)
-    vecs = embed(chunks)
+    embeddings = embed(chunks)
 
     points = []
-    for i, (chunk, vec) in enumerate(zip(chunks, vecs)):
+    for idx, (txt, vec) in enumerate(zip(chunks, embeddings)):
         points.append(
             PointStruct(
-                id=str(uuid.uuid4()),
+                id=f"{doc_id}_{idx}",
                 vector=vec,
                 payload={
+                    "text": txt,
                     "doc_id": doc_id,
-                    "chunk_id": i,
-                    "text": chunk
+                    "chunk_id": idx
                 }
             )
         )
 
     qdrant.upsert(collection_name="rag_chunks", points=points)
 
-    meta = _load_meta()
-    meta[doc_id] = {"chunks": len(chunks)}
-    _save_meta(meta)
-
-    print(f"[QDRANT] inserted {len(points)} chunks")
-
-    return {"doc_id": doc_id, "chunks": len(chunks)}
+    return {"chunks": len(points)}
 
 
-# ---------------------
-# Search (supports None doc_id = search all)
-# ---------------------
-def search_doc(doc_id: Optional[str], query: str, k: int = 5) -> List[Dict]:
-    qvec = embed([query])[0]
-
-    # If doc_id is None → search across all PDFs
-    query_filter = None
-
-    if doc_id not in (None, "", "all"):
-        query_filter = Filter(
-            must=[FieldCondition(key="doc_id", match=MatchValue(value=doc_id))]
-        )
+# -----------------------------------
+# SEARCH
+# -----------------------------------
+def search_doc(doc_id: str, query: str, k=5):
+    qvec = embed(query)[0]
 
     hits = qdrant.search(
         collection_name="rag_chunks",
         query_vector=qvec,
-        limit=k,
-        query_filter=query_filter
+        limit=k
     )
 
-    return [
-        {
-            "doc_id": h.payload.get("doc_id"),
-            "chunk_id": h.payload.get("chunk_id"),
-            "text": h.payload.get("text"),
-            "score": float(h.score)
-        }
-        for h in hits
-    ]
+    out = []
+    for h in hits:
+        p = h.payload
+        out.append({
+            "id": h.id,
+            "score": float(h.score),
+            "text": p.get("text", ""),
+            "doc_id": p.get("doc_id"),
+            "chunk_id": p.get("chunk_id")
+        })
 
-
-# ============================================================
-# Alias for compatibility with main.py
-# ============================================================
-def embed_texts(texts: List[str]):
-    """
-    Wrapper so main.py can import embed_texts instead of embed.
-    """
-    return embed(texts)
+    return out
