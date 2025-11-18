@@ -342,3 +342,13 @@ def index_pdf(filename: str):
     except Exception as e:
         print(f"[INDEX ERROR] {type(e).__name__}: {e}")
         raise HTTPException(500, f"Indexing failed: {str(e)}")
+
+
+
+@app.get("/debug/qdrant")
+def debug_qdrant():
+    from qdrant_client import QdrantClient
+    q = QdrantClient(path="qdrant_storage")
+    res = q.scroll(collection_name="rag_chunks", limit=5)
+    return {"count": len(res[0]), "sample": res[0]}
+
