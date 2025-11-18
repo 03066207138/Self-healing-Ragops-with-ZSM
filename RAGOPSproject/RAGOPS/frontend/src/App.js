@@ -3,8 +3,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
 /**
- * Agentic Self-Healing RAGOps + Qdrant Indexing (FIXED VERSION)
- * All “undefined metric” crashes are fixed with safe-access and defaults.
+ * FINAL FIXED VERSION — Self-Healing RAGOps Dashboard (Stable)
+ * - Handles backend errors
+ * - Shows fallback UI when no chunks or empty answers
+ * - Fully safe metric access
  */
 
 const API_BASE =
@@ -91,7 +93,7 @@ export default function App() {
   }
 
   // ============================================================
-  // 📌 MAIN QUERY
+  // 📌 MAIN QUERY — FIXED VERSION WITH ERROR LOGGING
   // ============================================================
   async function submit() {
     if (!query.trim()) return;
@@ -103,17 +105,37 @@ export default function App() {
     try {
       const res = await axios.post(`${API_BASE}/query`, { query });
 
-      const M = res.data?.metrics || {}; // SAFE
+      console.log("DEBUG /query response:", res.data);
 
-      setAnswer(res.data?.answer || "");
+      // ❌ Backend returned explicit error
+      if (res.data?.error) {
+        setAnswer(`⚠ ${res.data.error}`);
+        setMetrics({});
+        setError(res.data.error);
+        return;
+      }
+
+      // ❌ No answer received (likely no chunks)
+      if (!res.data?.answer || res.data.answer.trim() === "") {
+        setAnswer(
+          "⚠ No relevant answer found.\nUpload more PDFs or ask a different question."
+        );
+        setMetrics({});
+        return;
+      }
+
+      // 🟢 Normal success
+      const M = res.data.metrics || {};
+      setAnswer(res.data.answer);
       setMetrics(M);
 
       if (Object.keys(M).length > 0) {
         updateHistory(M);
       }
     } catch (e) {
-      console.error(e);
-      setError("⚠ Backend unreachable or Qdrant empty");
+      console.error("QUERY ERROR:", e);
+      setError("⚠ Backend unreachable or Qdrant has no indexed data");
+      setAnswer("⚠ Could not reach backend");
     } finally {
       setLoading(false);
     }
@@ -136,8 +158,8 @@ export default function App() {
 
         anomaly_type: m?.anomaly_type ?? "—",
         healing_action: m?.healing_action ?? "—",
-
         reward: m?.reward ?? 0,
+
         status_after_heal: m?.status_after_heal ?? "unknown",
       },
     ]);
@@ -169,17 +191,32 @@ export default function App() {
   }
 
   // ============================================================
-  // 📌 KPIs (SAFE)
+  // 📌 KPIs
   // ============================================================
   const kpis = useMemo(() => {
     if (!metrics) return [];
 
     return [
-      { label: "Governance Score", value: metrics?.governance_score?.toFixed?.(2) ?? "--" },
-      { label: "Faithfulness", value: metrics?.faithfulness?.toFixed?.(2) ?? "--" },
-      { label: "Coverage@K", value: metrics?.coverage_at_k?.toFixed?.(2) ?? "--" },
-      { label: "Semantic Drift", value: metrics?.semantic_drift?.toFixed?.(2) ?? "--" },
-      { label: "Latency (ms)", value: metrics?.latency_ms?.toFixed?.(1) ?? "--" },
+      {
+        label: "Governance Score",
+        value: metrics?.governance_score?.toFixed?.(2) ?? "--",
+      },
+      {
+        label: "Faithfulness",
+        value: metrics?.faithfulness?.toFixed?.(2) ?? "--",
+      },
+      {
+        label: "Coverage@K",
+        value: metrics?.coverage_at_k?.toFixed?.(2) ?? "--",
+      },
+      {
+        label: "Semantic Drift",
+        value: metrics?.semantic_drift?.toFixed?.(2) ?? "--",
+      },
+      {
+        label: "Latency (ms)",
+        value: metrics?.latency_ms?.toFixed?.(1) ?? "--",
+      },
     ];
   }, [metrics]);
 
@@ -260,8 +297,9 @@ export default function App() {
             ))}
           </ul>
 
-          {/* KPIs */}
           <hr />
+
+          {/* KPIs */}
           <div className="kpis">
             {kpis.map((k) => (
               <div key={k.label} className="kpi glassy">
