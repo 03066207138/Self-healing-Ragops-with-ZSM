@@ -43,12 +43,13 @@ def embed(texts: List[str]):
 # ---------------------
 # Qdrant Setup
 # ---------------------
-qdrant = QdrantClient(host="localhost", port=6333)
-
-qdrant.recreate_collection(
-    collection_name="rag_chunks",
-    vectors_config=VectorParams(size=384, distance=Distance.COSINE)
-)
+try:
+    qdrant.get_collection("rag_chunks")
+except:
+    qdrant.create_collection(
+        collection_name="rag_chunks",
+        vectors_config=VectorParams(size=384, distance=Distance.COSINE)
+    )
 
 
 # ---------------------
