@@ -3,10 +3,10 @@ import React, { useState, useEffect, useMemo } from "react";
 import axios from "axios";
 
 /**
- * FINAL FIXED VERSION — Self-Healing RAGOps Dashboard (Stable)
- * - Handles backend errors
- * - Shows fallback UI when no chunks or empty answers
- * - Fully safe metric access
+ * Self-Healing RAGOps Frontend (Stable Fix)
+ * - History always updates
+ * - KPIs safe
+ * - No undefined metric errors
  */
 
 const API_BASE =
@@ -93,7 +93,7 @@ export default function App() {
   }
 
   // ============================================================
-  // 📌 MAIN QUERY — FIXED VERSION WITH ERROR LOGGING
+  // 📌 MAIN QUERY
   // ============================================================
   async function submit() {
     if (!query.trim()) return;
@@ -105,44 +105,23 @@ export default function App() {
     try {
       const res = await axios.post(`${API_BASE}/query`, { query });
 
-      console.log("DEBUG /query response:", res.data);
+      const M = res.data?.metrics || {};
 
-      // ❌ Backend returned explicit error
-      if (res.data?.error) {
-        setAnswer(`⚠ ${res.data.error}`);
-        setMetrics({});
-        setError(res.data.error);
-        return;
-      }
-
-      // ❌ No answer received (likely no chunks)
-      if (!res.data?.answer || res.data.answer.trim() === "") {
-        setAnswer(
-          "⚠ No relevant answer found.\nUpload more PDFs or ask a different question."
-        );
-        setMetrics({});
-        return;
-      }
-
-      // 🟢 Normal success
-      const M = res.data.metrics || {};
-      setAnswer(res.data.answer);
+      setAnswer(res.data?.answer || "");
       setMetrics(M);
 
-      if (Object.keys(M).length > 0) {
-        updateHistory(M);
-      }
+      // ALWAYS update history (fix)
+      updateHistory(M);
     } catch (e) {
-      console.error("QUERY ERROR:", e);
-      setError("⚠ Backend unreachable or Qdrant has no indexed data");
-      setAnswer("⚠ Could not reach backend");
+      console.error(e);
+      setError("⚠ Backend unreachable or Qdrant empty");
     } finally {
       setLoading(false);
     }
   }
 
   // ============================================================
-  // 📌 TIMELINE UPDATE (SAFE ACCESS)
+  // 📌 TIMELINE UPDATE
   // ============================================================
   function updateHistory(m) {
     setHistory((prev) => [
@@ -183,7 +162,7 @@ export default function App() {
           ? "✔ Correct — added to learning memory"
           : corrected
           ? "✔ Improved answer saved"
-          : "⚠ Marked wrong — system noted"
+          : "⚠ Marked wrong — noted"
       );
     } catch {
       setError("⚠ Feedback failed");
@@ -191,32 +170,17 @@ export default function App() {
   }
 
   // ============================================================
-  // 📌 KPIs
+  // 📌 KPIs (SAFE)
   // ============================================================
   const kpis = useMemo(() => {
     if (!metrics) return [];
 
     return [
-      {
-        label: "Governance Score",
-        value: metrics?.governance_score?.toFixed?.(2) ?? "--",
-      },
-      {
-        label: "Faithfulness",
-        value: metrics?.faithfulness?.toFixed?.(2) ?? "--",
-      },
-      {
-        label: "Coverage@K",
-        value: metrics?.coverage_at_k?.toFixed?.(2) ?? "--",
-      },
-      {
-        label: "Semantic Drift",
-        value: metrics?.semantic_drift?.toFixed?.(2) ?? "--",
-      },
-      {
-        label: "Latency (ms)",
-        value: metrics?.latency_ms?.toFixed?.(1) ?? "--",
-      },
+      { label: "Governance Score", value: metrics?.governance_score?.toFixed?.(2) ?? "--" },
+      { label: "Faithfulness", value: metrics?.faithfulness?.toFixed?.(2) ?? "--" },
+      { label: "Coverage@K", value: metrics?.coverage_at_k?.toFixed?.(2) ?? "--" },
+      { label: "Semantic Drift", value: metrics?.semantic_drift?.toFixed?.(2) ?? "--" },
+      { label: "Latency (ms)", value: metrics?.latency_ms?.toFixed?.(1) ?? "--" },
     ];
   }, [metrics]);
 
@@ -297,9 +261,8 @@ export default function App() {
             ))}
           </ul>
 
-          <hr />
-
           {/* KPIs */}
+          <hr />
           <div className="kpis">
             {kpis.map((k) => (
               <div key={k.label} className="kpi glassy">
@@ -484,7 +447,6 @@ export default function App() {
     </div>
   );
 }
-
 
 /* ---------------- Styles ---------------- */
 const styles = `
