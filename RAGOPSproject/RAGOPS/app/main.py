@@ -17,6 +17,10 @@ from .self_healing_cp import telemetry, anomaly
 from .self_healing_cp.orchestrator import HealingAgent
 from .self_healing_cp.learner import LearningMemory
 
+
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
 # ============================================================
 # 🧠 Initialize FastAPI App
 # ============================================================
