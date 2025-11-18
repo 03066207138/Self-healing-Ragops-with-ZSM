@@ -12,7 +12,7 @@ from urllib.parse import unquote
 from .settings import settings
 from .self_healing_cp.metrics_logger import MetricsLogger
 from .rag.pipeline import RAGPipeline
-from .rag.pdf_store import embed_texts   # ✔ FIXED
+from .rag.pdf_store import embed as embed_texts
 from .self_healing_cp import telemetry, anomaly
 from .self_healing_cp.orchestrator import HealingAgent
 from .self_healing_cp.learner import LearningMemory
