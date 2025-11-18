@@ -85,7 +85,7 @@ def health():
     }
 
 # ============================================================
-# 💬 MAIN RAG QUERY
+# 💬 MAIN RAG QUERY (UPDATED)
 # ============================================================
 @app.post("/query")
 def query(payload: QueryIn):
@@ -102,6 +102,13 @@ def query(payload: QueryIn):
         answer, passages, tokens_in, tokens_out, latency_ms = pipeline.run(q)
     except Exception as e:
         return {"error": f"Pipeline failed: {str(e)}"}
+
+    # ⭐ FIX — Prevent empty output from breaking UI ⭐
+    if not answer or answer.strip() == "":
+        answer = (
+            "⚠ No relevant answer found in the indexed documents.\n"
+            "Try rephrasing your question or uploading more PDFs."
+        )
 
     used_passages = passages[: pipeline.max_ctx]
     texts = [p["text"] for p in used_passages]
@@ -192,6 +199,7 @@ def query(payload: QueryIn):
     global _last_row
     _last_row = row
 
+    # ⭐ FRONTEND-COMPATIBLE RESPONSE ⭐
     return {
         "answer": answer,
         "passages": used_passages,
@@ -241,8 +249,7 @@ def metrics_summary():
         return {}
 
     df = pd.read_csv(path, engine="python", on_bad_lines="skip")
-    if df.empty:
-        return {}
+    if df.empty: return {}
 
     df.columns = [c.lower().strip() for c in df.columns]
 
@@ -314,7 +321,6 @@ def index_pdf(filename: str):
     print(f"[INDEX] Attempting to index PDF: {pdf_path}")
 
     try:
-        # Clean doc_id
         doc_id = (
             Path(filename)
             .stem
