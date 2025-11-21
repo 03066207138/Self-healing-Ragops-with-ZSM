@@ -71,7 +71,7 @@ Tracks incorrect generations
 
 Adaptive learning loop
 
-🔹 5. Full API System
+
 
 Includes:
 
